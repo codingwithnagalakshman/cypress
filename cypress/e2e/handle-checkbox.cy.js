@@ -13,7 +13,7 @@ describe('handle checkbox', () => {
         cy.get('[type="checkbox"]').check({force: true})
     })
 
-    it.only('handle checkbox 2', () => {
+    it('handle checkbox 2', () => {
         cy.contains("Performance").click()
 
         cy.get('.oxd-topbar-body-nav-tab-item').eq(0).click()

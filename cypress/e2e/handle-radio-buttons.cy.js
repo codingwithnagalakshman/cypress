@@ -14,13 +14,13 @@ describe('handle radio buttons', () => {
         cy.get('[type="checkbox"]').check({force: true})
 
         cy.get("[type='radio']")
-            .eq(0)
+            .first()
             .should('be.checked')
             .parent()
             .should('have.text', 'Enabled')
             
         cy.get("[type='radio']")
-            .eq(1)
+            .last()
             .should('not.be.checked')
             .parent()
             .should('have.text', 'Disabled')
@@ -28,11 +28,11 @@ describe('handle radio buttons', () => {
         cy.get("[type='radio']").eq(1).check({force: true})
 
         cy.get("[type='radio']")
-            .eq(0)
+            .first()
             .should('not.be.checked')
             
         cy.get("[type='radio']")
-            .eq(1)
+            .last()
             .should('be.checked')
             
     })

@@ -11,7 +11,7 @@ describe('My first cypress test', () => {
     cy.contains("Login")
   })
 
-  it.only("should redirect to dashboard page", () => {
+  it("should redirect to dashboard page", () => {
     cy.visit("web/index.php/dashboard/index")
     cy.get("[name='username']").clear().type("Admin")
     cy.get("[name='password']").clear().type("admin123")

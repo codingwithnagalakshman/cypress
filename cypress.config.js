@@ -17,7 +17,7 @@ module.exports = defineConfig({
     fixturesFolder: "cypress/fixtures",
     screenshotsFolder: "cypress/screenshots",
     videosFolder: "cypress/videos",
-    viewportHeight: 660,
-    viewportWidth: 1000
+    viewportHeight: 1000,
+    viewportWidth: 1500
   }
 });

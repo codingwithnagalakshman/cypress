@@ -31,7 +31,7 @@ describe("Handle text box", () => {
 
     })
 
-    it.only("Validate text box", () => {
+    it("Validate text box", () => {
         cy.contains("Recruitment").click()
         cy.get(".orangehrm-header-container > button").click()
         cy.get("form").submit()
