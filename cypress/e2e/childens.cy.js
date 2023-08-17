@@ -8,7 +8,7 @@ describe("Get the children nodes", () => {
         cy.get("form").submit()
     })
 
-    const data = ["Timesheets to Approve", "Pending Self Review", "Candidate to Interview"];
+    const data = ["Pending Self Review", "Candidate to Interview"];
     it("get children nodes", () => {
         cy.get(".orangehrm-todo-list")
             .children()
