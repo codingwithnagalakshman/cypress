@@ -18,6 +18,7 @@ module.exports = defineConfig({
     screenshotsFolder: "cypress/screenshots",
     videosFolder: "cypress/videos",
     viewportHeight: 1000,
-    viewportWidth: 1500
+    viewportWidth: 1500,
+    videoUploadOnPasses: false
   }
 });

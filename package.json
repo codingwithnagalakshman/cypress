@@ -3,9 +3,14 @@
     "cypress": "^12.17.3"
   },
   "scripts": {
-    "cypress:open": "cypress open",
-    "cypress:run": "cypress run",
-    "cypress:override": "cypress run --browser edge --config viewportWidth=1280,viewportHeight=720",
-    "cypress:parallel": "cypress run --record --key=abc123 --parallel"
+    "cy:open": "cypress open",
+    "cy:override": "cypress run --browser edge --config viewportWidth=1280,viewportHeight=720",
+    "cy:parallel": "cypress run --record --key=abc123 --parallel",
+    "start": "my-server -p 3030",
+    "cy:run": "cypress run",
+    "test": "start-server-and-test start http://localhost:3030 cy:run"
+  },
+  "devDependencies": {
+    "start-server-and-test": "^2.0.0"
   }
 }
