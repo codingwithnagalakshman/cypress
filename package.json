@@ -6,9 +6,9 @@
     "cy:open": "cypress open",
     "cy:override": "cypress run --browser edge --config viewportWidth=1280,viewportHeight=720",
     "cy:parallel": "cypress run --record --key=abc123 --parallel",
-    "start": "my-server -p 3030",
     "cy:run": "cypress run",
-    "test": "start-server-and-test start http://localhost:3030 cy:run"
+    "cy:verify": "cypress verify",
+    "cy:info": "cypress info"
   },
   "devDependencies": {
     "start-server-and-test": "^2.0.0"
