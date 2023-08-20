@@ -16,7 +16,6 @@ phases:
       - npm ci
   pre_build:
     commands:
-      - yum install libgtk2.0-0 libgtk-3-0 libgbm-dev libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2 libxtst6 xauth xvfb
       - npm run cy:verify
       - npm run cy:info
   build:
