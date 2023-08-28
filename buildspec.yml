@@ -13,7 +13,7 @@ phases:
       - export COMMIT_INFO_AUTHOR="$(git log -1 --pretty=%an)"
       - export COMMIT_INFO_SHA="$(git log -1 --pretty=%H)"
       - export COMMIT_INFO_REMOTE="$(git config --get remote.origin.url)"
-      - npm ci
+      - npm install
   pre_build:
     commands:
       - npm run cy:verify
