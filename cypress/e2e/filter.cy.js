@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-describe("filer example", () => {
+describe("filter example", () => {
     beforeEach( () => {
         cy.visit("web/index.php/dashboard/index")
         cy.get("[name='username']").clear().type("Admin")
