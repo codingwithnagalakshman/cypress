@@ -23,3 +23,29 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+import 'cypress-downloadfile/lib/downloadFileCommand';
+
+Cypress.Commands.add('login', (username, password) => { 
+    cy.visit("web/index.php/dashboard/index")
+    cy.get("[name='username']").clear().type(username)
+    cy.get("[name='password']").clear().type(password)
+    cy.get("form").submit()
+ })
+
+ Cypress.Commands.add('loginWithSession', (username, password) => { 
+    cy.session([username, password], () => {
+        cy.visit("web/index.php/dashboard/index")
+        cy.get("[name='username']").clear().type(username)
+        cy.get("[name='password']").clear().type(password)
+        cy.get("form").submit()
+    },{
+      validate() {
+        cy.visit('/web/index.php/dashboard/index')
+      }
+    }
+    )
+ })
+
+ Cypress.Commands.add('navigateTo', (text) => { 
+    cy.contains(text).click()
+ })

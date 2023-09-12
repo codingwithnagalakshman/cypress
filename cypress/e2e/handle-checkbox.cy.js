@@ -24,13 +24,24 @@ describe('handle checkbox', () => {
             .click()
        
 
-        cy.get('[type="checkbox"]').check(["0", "1"], {force: true})
+        cy.get('[type="checkbox"]')
+        .check(["0", "1"], {force: true})
 
-        cy.get('.orangehrm-horizontal-padding > div > .oxd-text').should('have.text', "(2) Records Selected")
+        cy.get('.orangehrm-horizontal-padding > div > .oxd-text')
+        .should('have.text', "(2) Records Selected")
 
-        cy.get('[type="checkbox"]').check(["2", "4"], {force: true})
+        cy.get('[type="checkbox"]')
+        .check(["2", "4"], {force: true})
 
-        cy.get('.orangehrm-horizontal-padding > div > .oxd-text').should('have.text', "(4) Records Selected")
+        cy.get('.orangehrm-horizontal-padding > div > .oxd-text')
+        .should('have.text', "(4) Records Selected")
+
+        cy.get('[type="checkbox"]')
+        .uncheck(["4"], {force: true})
+
+        cy.get('.orangehrm-horizontal-padding > div > .oxd-text')
+        .should('have.text', "(3) Records Selected")
+
 
     })
 

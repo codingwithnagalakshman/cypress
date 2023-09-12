@@ -9,9 +9,11 @@ describe('handle radio buttons', () => {
     it('handle radio buttons', () => {
         cy.contains("PIM").click()
 
-        cy.get(".oxd-topbar-body-nav-tab-item").eq(2).click()
+        cy.get(".oxd-topbar-body-nav-tab-item")
+        .eq(2).click()
 
-        cy.get('[type="checkbox"]').check({force: true})
+        cy.get('[type="checkbox"]')
+        .check({force: true})
 
         cy.get("[type='radio']")
             .first()
@@ -25,7 +27,8 @@ describe('handle radio buttons', () => {
             .parent()
             .should('have.text', 'Disabled')
 
-        cy.get("[type='radio']").eq(1).check({force: true})
+        cy.get("[type='radio']")
+        .eq(1).check({force: true})
 
         cy.get("[type='radio']")
             .first()
