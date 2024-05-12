@@ -3,6 +3,10 @@ version: 0.2
 
 batch:
   fast-fail: false
+  build-list:
+    - identifier: cypress-e2e-tests
+      env:
+        image: public.ecr.aws/cypress-io/cypress/browsers:node-20.9.0-chrome-118.0.5993.88-1-ff-118.0.2-edge-118.0.2088.46-1
   build-matrix:
     dynamic:
       env:
@@ -40,6 +44,4 @@ phases:
       - npm run cy:info
   build:
     commands:
-      - npx cypress run --record --key=4300bd31-809d-43ca-9144-d34864507994 --parallel --browser $CY_BROWSER --ci-build-id
-        $CODEBUILD_INITIATOR --group "$CY_GROUP" --spec "$CY_SPEC" --config
-        "$CY_CONFIG"
+      - npx cypress run --record --key=4300bd31-809d-43ca-9144-d34864507994 --parallel --browser $CY_BROWSER --group "$CY_GROUP" --spec "$CY_SPEC" --config "$CY_CONFIG"
