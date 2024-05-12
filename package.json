@@ -1,16 +1,27 @@
 {
+  "name": "cypress-youtube",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
   "scripts": {
     "cy:open": "cypress open",
-    "cy:override": "cypress run --browser edge --config viewportWidth=1280,viewportHeight=720",
-    "cy:parallel": "cypress run --record --key=9f520cf5-3635-4707-882b-9209d5d0b7a0 --parallel",
-    "cy:run": "cypress run",
+    "cy:override": "cypress run --browser electron --config viewportWidth=1280,viewportHeight=720",
+    "cy:run": "cypress run --spec 'cypress/e2e/test1/**/*'",
     "cy:verify": "cypress verify",
     "cy:info": "cypress info",
-    "cy:ci": "cypress run --record --key=9f520cf5-3635-4707-882b-9209d5d0b7a0"
+    "cy:cloud": "cypress run --spec 'cypress/e2e/test1/**/*' --record --key 4300bd31-809d-43ca-9144-d34864507994",
+    "cy:dev": "cypress open --config-file dev.config.js",
+    "cy:stage": "cypress open --config-file stage.config.js",
+    "cy:prod": "cypress open --config-file prod.config.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^13.6.0",
+    "fs": "^0.0.1-security"
   },
   "devDependencies": {
-    "cypress": "^13.1.0",
-    "cypress-downloadfile": "^1.2.3",
-    "fs": "^0.0.1-security"
+    "cypress-downloadfile": "^1.2.3"
   }
 }
