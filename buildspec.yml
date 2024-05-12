@@ -8,13 +8,11 @@ batch:
       env:
         variables:
           CY_GROUP_SPEC:
-            - "UI-chrome|chrome|cypress/e2e/**/*"
+            - "UI-chrome|electron|cypress/e2e/**/*"
           WORKERS:
             - 1
             - 2
             - 3
-            - 4
-            - 5
 
 phases:
   install:
