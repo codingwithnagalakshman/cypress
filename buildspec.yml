@@ -34,4 +34,4 @@ phases:
       - npm run cy:info
   build:
     commands:
-      - npx cypress run --record --key=4300bd31-809d-43ca-9144-d34864507994 --parallel --ci-build-id  $CODEBUILD_INITIATOR
+      - npx cypress run --record --key 4300bd31-809d-43ca-9144-d34864507994 --parallel --ci-build-id  $CODEBUILD_INITIATOR
