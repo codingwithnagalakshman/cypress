@@ -8,7 +8,8 @@ batch:
       env:
         variables:
           CY_GROUP_SPEC:
-            - "UI-chrome|electron|cypress/e2e/*|viewportWidth=1280,viewportHeight=720"
+            - "UI-part1|electron|cypress/e2e/part1/*|viewportWidth=1280,viewportHeight=720"
+            - "UI-part2|electron|cypress/e2e/part2/*|viewportWidth=1280,viewportHeight=720"
           WORKERS:
             - 1
             - 2
