@@ -7,8 +7,6 @@ batch:
     dynamic:
       env:
         variables:
-          CY_GROUP_SPEC:
-            - "UI-chrome|electron|cypress/e2e/*|viewportWidth=1280,viewportHeight=720"
           WORKERS:
             - 1
             - 2
@@ -28,10 +26,6 @@ phases:
       - export COMMIT_INFO_AUTHOR="$(git log -1 --pretty=%an)"
       - export COMMIT_INFO_SHA="$(git log -1 --pretty=%H)"
       - export COMMIT_INFO_REMOTE="$(git config --get remote.origin.url)"
-      - CY_GROUP=$(echo $CY_GROUP_SPEC | cut -d'|' -f1)
-      - CY_BROWSER=$(echo $CY_GROUP_SPEC | cut -d'|' -f2)
-      - CY_SPEC=$(echo $CY_GROUP_SPEC | cut -d'|' -f3)
-      - CY_CONFIG=$(echo $CY_GROUP_SPEC | cut -d'|' -f4)
       - dnf install -y xorg-x11-server-Xvfb gtk3-devel nss alsa-lib
       - npm install
   pre_build:
@@ -40,4 +34,4 @@ phases:
       - npm run cy:info
   build:
     commands:
-      - npx cypress run --record --key=4300bd31-809d-43ca-9144-d34864507994 --parallel --browser $CY_BROWSER --ci-build-id  $CODEBUILD_INITIATOR --group "$CY_GROUP" --spec "$CY_SPEC" --config  "$CY_CONFIG"
+      - npx cypress run --record --key=4300bd31-809d-43ca-9144-d34864507994 --parallel --ci-build-id  $CODEBUILD_INITIATOR
